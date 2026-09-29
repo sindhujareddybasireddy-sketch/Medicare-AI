@@ -9,7 +9,8 @@ import {
   Calendar, 
   FileText, 
   Activity, 
-  PhoneCall 
+  PhoneCall,
+  Bot 
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -50,6 +51,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             </span>
           </div>
           <div className="flex items-center gap-4">
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent('open-n8n-chat'))}
+              className="inline-flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors"
+            >
+              <Bot className="w-3.5 h-3.5 text-sky-400" />
+              <span>AI Chat Assistant</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            </button>
+            <span className="text-slate-600">|</span>
             <button
               onClick={() => handleNavClick('dashboard')}
               className={`inline-flex items-center gap-1.5 transition-colors ${
@@ -368,6 +378,19 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               }`}
             >
               Patient Dashboard
+            </button>
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                window.dispatchEvent(new CustomEvent('open-n8n-chat'));
+              }}
+              className="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-sky-700 bg-sky-50 flex items-center justify-between"
+            >
+              <div className="flex items-center gap-2">
+                <Bot className="w-4 h-4 text-sky-600" />
+                <span>AI Chat Assistant (n8n Live)</span>
+              </div>
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             </button>
             <button
               onClick={() => handleNavClick('contact')}

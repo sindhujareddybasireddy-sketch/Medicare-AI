@@ -3,6 +3,7 @@ import { PageId } from './types';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { NotificationToast, ToastMessage } from './components/NotificationToast';
+import { N8nChatWidget } from './components/N8nChatWidget';
 
 // Pages
 import { HomePage } from './pages/HomePage';
@@ -142,6 +143,9 @@ export default function App() {
 
       {/* Global Footer */}
       <Footer onNavigate={handleNavigate} />
+
+      {/* n8n Chat Assistant Integration */}
+      <N8nChatWidget />
     </div>
   );
 }
