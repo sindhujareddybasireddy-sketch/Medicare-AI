@@ -1,0 +1,6 @@
+{
+  "name": "MediCare AI - Modern Healthcare & Hospital Platform",
+  "description": "Smart Healthcare. Better Care. A modern healthcare platform designed to simplify appointments, medical services, prescriptions, reports, and patient care.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
